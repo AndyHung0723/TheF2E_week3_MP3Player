@@ -1,0 +1,228 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*****************
+***** layout *****
+******************/
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
+* {
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;;
+}
+.wrap {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FF8C6E;
+    display: flex;
+    align-items: center;
+}
+.content {
+    margin: 0 auto;
+    width: 85vh;
+    height: 85vh;
+    border: 3px solid #000;
+    position: relative;
+    background: #FFF;
+    padding: 3vh 7vh;
+}
+.content::before {
+    content: "";
+    display: inline-block;
+    width: 3vh;
+    height: calc(100% + 1px);
+    border-top: 3px solid #000;
+    border-bottom: 3px solid #000;
+    border-right: 3px solid #000;
+    position: absolute;
+    top: calc(1.7vh - 3px);
+    right: calc(-3vh - 6px);
+    transform: skewY(45deg);
+    background-color: #C5C5C5;
+}
+.content::after {
+    content: "";
+    display: inline-block;
+    width: calc(100% + 1.5px);
+    height: 3vh;
+    border-bottom: 3px solid #000;
+    border-left: 3px solid #000;
+    position: absolute;
+    transform: skewX(45deg);
+    bottom: calc(-3vh - 6px);
+    left: calc(1.7vh - 3px);
+    background-color: #C5C5C5;
+}
+.top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80%;
+}
+.bottom {
+    width: 100%;
+    height: 20%;
+    margin-top: 25px;
+}
+.disk {
+    width: 60vh;
+    height: 60vh;
+    border-radius: 50%;
+    border: 3px solid #000;
+    background: url(/img/test.png) center no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.disk::before {
+    content: "";
+    display: inline-block;
+    width: 18%;
+    height: 18%;
+    border-radius: 50%;
+    border: 3px solid #000;
+    background-color: #fff;
+}
+.play {
+    position: absolute;
+    z-index: 1;
+    left: -40px;
+    top: 290px;
+}
+.play img {
+    position: absolute;
+}
+.play-icon {
+    top: 310px;
+    left: 305px;
+}
+.menu {
+    position: relative;
+    z-index: 0;
+}
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    border: 3px solid #000;
+    position: relative;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+.icon:last-child {
+    position: absolute;
+    bottom: 0;
+}
+.icon::before {
+    content: "";
+    display: inline-block;
+    width: 5.5vh;
+    height: 5.5vh;
+    border-radius: 50%;
+    border: 3px solid #000;
+    background-color: #C5C5C5;
+    position: absolute;
+    z-index: -1;
+    bottom: -6.5px;
+    right: -6.5px;
+}
+.icon:hover {
+    bottom: -6.5px;
+    right: -6.5px;
+}
+.icon:hover::before {
+    top: -6.5px;
+    left: -6.5px;
+}
+.player-row-1 {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.song {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.singer {
+    font-size: 16px;
+}
+.volumn {
+    display: flex;
+    align-items: center;
+}
+.progress {
+    height: 10px;
+    border: 3px solid #000;
+    border-radius: 5vh;
+    margin-right: 10px;
+    position: relative;
+} 
+.progress--md {
+    width: 18vh;
+}
+.progress--lg {
+    width: 60vh;
+}
+.btn {
+    height: 20px;
+    width: 10px;
+    border: 3px solid #000;
+    z-index: 1;
+    background-color: #fff;
+    position: absolute;
+    top: -7px;
+    left: 9vh;
+}
+.player-row-2 {
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
