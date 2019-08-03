@@ -112,7 +112,7 @@ table {
     height: 60vh;
     border-radius: 50%;
     border: 3px solid #000;
-    background: url(/img/test.png) center no-repeat;
+    background: url(img/test.png) center no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
